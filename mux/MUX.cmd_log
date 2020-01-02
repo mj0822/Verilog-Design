@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "E:/Programs/mux/MUX.xst" -ofn "E:/Programs/mux/MUX.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc5vlx20t-ff323-2 MUX.ngc MUX.ngd  
+map -intstyle ise -p xc5vlx20t-ff323-2 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -ir off -pr off -lc off -power off -o MUX_map.ncd MUX.ngd MUX.pcf 
+par -w -intstyle ise -ol high -mt off MUX_map.ncd MUX.ncd MUX.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml MUX.twx MUX.ncd -o MUX.twr MUX.pcf 
+xst -intstyle ise -ifn "E:/Programs/mux/MUX.xst" -ofn "E:/Programs/mux/MUX.syr" 
